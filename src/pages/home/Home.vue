@@ -36,7 +36,7 @@ export default {
 @media screen and (min-width: 1300px)
     .home
         display flex
-        width 90%
+        width 70%
         position absolute
         top 50%
         left 50%

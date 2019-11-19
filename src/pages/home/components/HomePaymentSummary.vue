@@ -23,7 +23,7 @@
 
         <div class="button-container">
             <router-link to="/checkout">
-                <button class="checkout-button">Checkout</button>
+                <button class="checkout-button">Pagar</button>
             </router-link>
         </div>
     </div>
@@ -91,6 +91,7 @@ export default {
     border-radius 4px
     border 1px solid #eee
     background-color #edeef2
+    font-size 1rem
 
     &:focus
         outline 0
