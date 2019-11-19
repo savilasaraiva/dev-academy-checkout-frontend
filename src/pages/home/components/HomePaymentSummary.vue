@@ -39,6 +39,8 @@ export default {
 <style lang="stylus">
 .home-payment-summary
     padding 0 20px
+    background-color #fff
+    border-radius 4px
 
 .title, .description
     text-align left

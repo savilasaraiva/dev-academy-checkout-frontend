@@ -21,7 +21,6 @@ export default {
 <style lang="stylus">
 .home
     width 100%
-    background-color #fff
 
 @media screen and (min-width: 950px)
     .home
@@ -32,7 +31,7 @@ export default {
         transform translate(-50%, -50%)
 
     .product-list
-        margin-right  5%
+        margin-right  2%
 
 @media screen and (min-width: 1300px)
     .home

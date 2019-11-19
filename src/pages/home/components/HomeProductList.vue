@@ -1,7 +1,9 @@
 <template>
     <div class="home-product-list">
         <h2 class="title">Produtos</h2>
-        <home-product-list-item class="product-item" v-for="product in products" :key="product.id" :product="product" />
+        <div class="product-list-container">
+            <home-product-list-item class="product-item" v-for="product in products" :key="product.id" :product="product" />
+        </div>
     </div>
 </template>
 
@@ -25,6 +27,12 @@ export default {
 <style lang="stylus" scoped>
 .home-product-list
     width 100%
+    background-color #fff
+    border-radius 4px
+
+.product-list-container
+    max-height 60vh
+    overflow-y auto
 
 .title
     text-align left
