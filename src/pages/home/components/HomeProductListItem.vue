@@ -54,7 +54,7 @@ export default {
 <style lang="stylus" scoped>
 .product-list-item
     padding 10px 20px
-    text-align left
+    text-align left 
 
 .name
     margin 0

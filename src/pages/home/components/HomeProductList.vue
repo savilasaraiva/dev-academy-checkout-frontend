@@ -28,7 +28,6 @@ export default {
 
 .title
     text-align left
-    // margin 0
     padding 0px 20px
 
 .product-item + .product-item
