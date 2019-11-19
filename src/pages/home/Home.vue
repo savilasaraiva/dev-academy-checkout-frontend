@@ -22,11 +22,4 @@ export default {
   .home
     width 100%
     height 100%
-    display flex
-
-  .home-product-list
-    width 100%
-
-  .home-payment-summary
-    width 100%
 </style>
