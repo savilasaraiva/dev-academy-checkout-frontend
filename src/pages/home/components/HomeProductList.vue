@@ -6,12 +6,18 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
 import HomeProductListItem from './HomeProductListItem';
+
+const { mapState } = createNamespacedHelpers('products')
 
 export default {
     name: 'HomeProductList',
     components: {
         HomeProductListItem
+    },
+    computed: {
+        ...mapState(['products'])
     }
 }
 </script>
