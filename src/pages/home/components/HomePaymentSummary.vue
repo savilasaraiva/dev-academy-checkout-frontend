@@ -18,7 +18,13 @@
         </div>
         <div class="total-value">
             <p class="total">Valor total</p>
-            <p class="value">R$ {{ totalValue }}</p>
+            <p class="value">{{ totalValue | toMoney }}</p>
+        </div>
+
+        <div class="button-container">
+            <router-link to="/checkout">
+                <button class="checkout-button">Checkout</button>
+            </router-link>
         </div>
     </div>
 </template>
@@ -38,6 +44,7 @@ export default {
 
 <style lang="stylus">
 .home-payment-summary
+    position relative
     padding 0 20px
     background-color #fff
     border-radius 4px
@@ -72,4 +79,19 @@ export default {
 
     .value
         margin 0
+
+.button-container
+    position absolute
+    width calc(100% - 40px) 
+    bottom 20px
+
+.checkout-button
+    width 100%
+    height 50px
+    border-radius 4px
+    border 1px solid #eee
+    background-color #edeef2
+
+    &:focus
+        outline 0
 </style>

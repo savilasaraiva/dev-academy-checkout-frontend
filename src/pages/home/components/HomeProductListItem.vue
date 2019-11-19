@@ -28,18 +28,6 @@ export default {
     props: {
         product: Object
     },
-    filters: {
-        toMoney(value) {
-            const formatter = new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            })
-
-            return formatter.format(value)
-        }
-    },
     computed: {
         productTotalPrice() {
             return (this.product.price * (this.product.quantity || 1))
