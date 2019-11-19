@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
-import HomeProductListItem from './HomeProductListItem';
+import { createNamespacedHelpers } from 'vuex'
+import HomeProductListItem from './HomeProductListItem'
 
 const { mapState } = createNamespacedHelpers('products')
 
@@ -28,7 +28,8 @@ export default {
 
 .title
     text-align left
-    margin 0
+    // margin 0
+    padding 0px 20px
 
 .product-item + .product-item
     border-top 1px solid #e6e6e6
