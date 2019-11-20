@@ -37,7 +37,7 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 
-const { mapState, mapGetters, mapActions } = createNamespacedHelpers('products')
+const { mapState, mapGetters, mapActions } = createNamespacedHelpers('checkout')
 
 export default {
     name: 'Checkout',

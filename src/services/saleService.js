@@ -1,8 +1,13 @@
 import axios from 'axios'
-const URL = 'https://sgdpps197d.execute-api.us-east-1.amazonaws.com/v1/unauth'
+import authService from './authService'
+const URL = 'https://sgdpps197d.execute-api.us-east-1.amazonaws.com/v1'
 
-const save = () => {
-    return axios.post(`${URL}/sales`)
+const save = (creditCard) => {
+    const token = authService.getAuthenticationToken()
+
+    return axios.post(`${URL}/sales`, creditCard, {
+        headers: { Authorization: token }
+    })
 }
 
 export default {
