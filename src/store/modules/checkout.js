@@ -1,6 +1,7 @@
 import { saleService } from '@/services'
 
 const state = {
+    isLoading: false,
     creditCardForm: {
         cardNumber: '',
         cardHolder: '',
@@ -32,14 +33,21 @@ const getters = {
 }
 
 const actions = {
-    saveSale({ state }) {
+    saveSale({ state, commit }) {
+        commit('setLoading', true)
         return saleService.save(state.creditCardForm).then(response => {
             console.log(response)
+        }).finally(() => {
+            commit('setLoading', false)
         })
     }
 }
 
-const mutations = {}
+const mutations = {
+    setLoading(state, value) {
+        state.isLoading = value
+    }
+}
 
 
 export default {
