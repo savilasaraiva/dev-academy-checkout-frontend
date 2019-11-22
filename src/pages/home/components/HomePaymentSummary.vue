@@ -1,98 +1,112 @@
 <template>
-    <div class="home-payment-summary">
-        <h2 class="title">Resumo</h2>
-        <p class="description">Abaixo é possível verificar as taxas, os descontos e o cálculo do valor final da vendas </p>
-        <div class="billing-info">
-            <div class="discount">
-                <p class="key">Desconto</p>
-                <p class="value">R$ 0,00</p>
-            </div>
-            <div class="tax">
-                <p class="key">Acréscimo</p>
-                <p class="value">R$ 0,00</p>
-            </div>
-            <div class="tax">
-                <p class="key">Taxa de serviço</p>
-                <p class="value">R$ 0,00</p>
-            </div>
-        </div>
-        <div class="total-value">
-            <p class="total">Valor total</p>
-            <p class="value">{{ totalValue | toMoney }}</p>
-        </div>
-
-        <div class="button-container">
-            <router-link to="/checkout">
-                <button class="checkout-button">Pagar</button>
-            </router-link>
-        </div>
+  <div class="home-payment-summary">
+    <h2 class="title">Resumo</h2>
+    <p
+      class="description"
+    >Abaixo é possível verificar as taxas, descontos e o cáculo do valor de vendas</p>
+    <div class="billing-info">
+      <div class="discount">
+        <p class="key">Desconto</p>
+        <p class="value">0,00</p>
+      </div>
+      <div class="tax">
+        <p class="key">Acréscimo</p>
+        <p class="value">0,00</p>
+      </div>
+      <div class="tax">
+        <p class="key">Taxa de Serviço</p>
+        <p class="value">0,00</p>
+      </div>
     </div>
+    <div class="total-value">
+      <p class="total">Valor total</p>
+      <p class="value">{{ totalValue | toMoney }}</p>
+    </div>
+    <div class="button-container">
+      <router-link to="/checkout">
+        <button class="checkout-button">Checkout</button>
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
+import { createNamespacedHelpers } from "vuex";
 
-const { mapGetters } = createNamespacedHelpers('products')
+const { mapGetters } = createNamespacedHelpers("products");
 
 export default {
-    name: 'HomePaymentSummary',
-    computed: {
-        ...mapGetters(['totalValue'])
-    }
-}
+  name: "HomePaymentSummary",
+  computed: {
+    ...mapGetters(["totalValue"])
+  }
+};
 </script>
 
-<style lang="stylus">
-.home-payment-summary
-    position relative
-    padding 0 20px
-    background-color #fff
-    border-radius 4px
+<style lang="stylus" scoped>
+.home-payment-summary {
+  position: relative;
+  padding: 0 20px;
+  background-color: #fff;
+  border-radius: 4px;
+}
 
-.title, .description
-    text-align left
+.title, .description {
+  text-align: left;
+}
 
-.billing-info 
-    border-top 1px solid #eee
-    border-bottom 1px solid #eee
-    
-    div
-        display flex
-        justify-content space-between
+.billing-info {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 
-        p
-            margin 10px 0
+  div {
+    display: flex;
+    justify-content: space-between;
 
-    .key
-        text-align left
-    
-    .value
-        text-align right 
+    p {
+      margin: 10px 0;
+    }
+  }
 
-.total-value
-    text-align right
-    font-size 1.1rem
+  .key {
+    text-align: left;
+  }
 
-    .total
-        font-weight 700
-        margin-bottom 10px
+  .value {
+    text-align: right;
+  }
+}
 
-    .value
-        margin 0
+.total-value {
+  text-align: right;
+  font-size: 1.1rem;
 
-.button-container
-    position absolute
-    width calc(100% - 40px) 
-    bottom 20px
+  .total {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
 
-.checkout-button
-    width 100%
-    height 50px
-    border-radius 4px
-    border 1px solid #eee
-    background-color #edeef2
-    font-size 1rem
+  .value {
+    margin: 0;
+  }
+}
 
-    &:focus
-        outline 0
+.button-container {
+  position: absolute;
+  width: calc(100% - 40px);
+  bottom: 20px;
+}
+
+.checkout-button {
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #edeef2;
+  font-size: 1rem;
+
+  &:focus {
+    outline: 0;
+  }
+}
 </style>
